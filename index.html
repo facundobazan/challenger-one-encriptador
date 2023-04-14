@@ -10,32 +10,45 @@
 </head>
 
 <body>
-    <div class="logo">
-        <img src="assets/img/Logo.png" alt="Logo" srcset="">
+    <div class="container">
+
+        <!-- logo -->
+        <div class="l-col">
+            <img class="logo" src="assets/img/Logo.png" alt="Logo" srcset="">
+        </div>
+
+        <!-- texto de entrada y botones de encriptacion -->
+        <div class="c-col">
+            <textarea class="msg-entrada" type="text" name="" id="msg-entrada" placeholder="Ingrese el texto aquí"
+                wrap="soft" autocomplete="off" autofocus cols="10"></textarea>
+
+            <div class="info">
+                <img class="ico-inf" src="assets/svg/bi_exclamation-circle-fill.svg" alt="" srcset="">
+                <p class="inf">Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-encriptar">Encriptar</button>
+                <button class="btn-desencriptar">Desencriptar</button>
+            </div>
+        </div>
+
+        <!-- caja de resultados -->
+        <div class="r-col">
+            <div class="box-result">
+                <textarea class="msg-salida" name="" id="msg-salida" cols="30" rows="10" readonly disabled></textarea>
+
+                <img class="muñeco" src="assets/img/Muñeco.png" alt="Muñeco" srcset="">
+
+                <p class="titulo-encriptado">Ningún mensaje fue encontrado</p>
+                
+                <p class="texto-encriptado">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </div>
     </div>
 
-    <textarea class="text" type="text" name="" id="input" placeholder="Ingrese el texto aquí" wrap="soft" autocomplete="off" autofocus cols="10"></textarea>
-
-    <div class="box-result">
-    </div>
-
-    <img class="muñeco" src="assets/img/Muñeco.png" alt="Muñeco" srcset="">
-
-    <div class="frame-5">
-        <p class="titulo-texto-encriptado">Ningún mensaje fue encontrado</p>
-        <p class="texto-encriptado">Ingresa el texto que desees encriptar o desencriptar.</p>
-    </div>
-
-    <div class="frame-1">
-        <img class="ico-inf" src="assets/svg/bi_exclamation-circle-fill.svg" alt="" srcset="">
-        <p class="inf">Solo letras minúsculas y sin acentos</p>
-    </div>
-
-    <div class="frame-3">
-        <button class="btn-1">Encriptar</button>
-        <button class="btn-2">Desencriptar</button>
-    </div>
-
+    <!-- footer -->
+    <footer>Sitio web desarrollado por Facundo Bazan - facundobazan@icloud.com</footer>
     <script src="assets/js/app.js"></script>
 </body>
 

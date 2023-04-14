@@ -6,87 +6,139 @@
       font-family: 'Ubuntu', sans-serif;
       text-decoration: none;
       font-style: normal;
+      box-sizing: border-box;
+      overflow: hidden;
   }
 
   body {
       background: #E5E5E5;
+      width: 100vw;
+      min-height: 100vh;
+  }
+
+  .container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      gap: 20px;
+  }
+
+  .l-col,
+  .c-col,
+  .r-col {
+      display: flex;
+      justify-content: center;
+      border: 0;
+      margin: 20px;
+      padding: 20px;
+  }
+
+
+  .l-col {
+      flex-grow: 1;
   }
 
   .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 40px;
-
-      position: absolute;
       width: 120px;
       height: 48px;
-      left: 40px;
-      top: 40px;
   }
 
-  textarea {
+  .c-col {
+      flex-grow: 8;
+      flex-direction: column;
+  }
+
+  .msg-entrada {
+      margin: 80px 10px 200px 10px;
       resize: none;
-      position: absolute;
-      width: 680px;
-      height: 288px;
-      left: 240px;
-      top: 168px;
+      height: 300px;
+      text-align: justify;
+      text-transform: lowercase;
       font-weight: 400;
       font-size: 32px;
       line-height: 150%;
       color: #0A3871;
       border: 0;
+      border-radius: 13px;
   }
 
-  textarea::placeholder {
-      font-size: 32px;
-      line-height: 150%;
+  .info {
+      display: flex;
+      margin-left: 10%;
+      gap: 10px;
+  }
+
+  .buttons {
+      display: flex;
+      justify-content: space-around;
+  }
+
+  button {
+      margin: 5vh 0;
+      width: 328px;
+      height: 67px;
+      border-radius: 24px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      background: #D8DFE8;
+      border: 1px solid #E5E5E5;
+  }
+
+  .btn-encriptar {
+      background: #0A3871;
+      color: #fff;
+  }
+
+  .btn-desencriptar {
+      border: 1px solid #0A3871;
       color: #0A3871;
   }
 
+  .r-col {
+      flex-grow: 2;
+      justify-content: center;
+      align-self: stretch;
+  }
+
   .box-result {
-      position: absolute;
-      width: 400px;
-      height: 944px;
-      left: 1000px;
-      top: 40px;
-
-      /* White */
+      min-width: 340px;
+      min-height: 80vh;
       background: #FFFFFF;
-
-      /* shadow */
       box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
       border-radius: 32px;
+      display: flex;
+      flex-flow: column nowrap;
+  }
+
+  .msg-salida {
+      display: none;
+      resize: none;
+      width: 300px;
+      height: 400px;
+      padding: 25px;
+      margin: 20px;
+      border-radius: 24px;
+      text-align: justify;
+      text-transform: lowercase;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      color: #6a84a4;
+      border: none;
+      overflow-y: auto;
   }
 
   .muñeco {
       position: absolute;
+      top: 20%;
       width: 336px;
-      height: 304px;
-      left: 1032px;
-      top: 283px;
   }
 
-  .frame-5 {
-      /* Frame 5 */
-
-      /* Auto layout */
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 16px;
-
+  .titulo-encriptado {
       position: absolute;
-      width: 336px;
-      height: 122px;
-      left: 1032px;
-      top: 619px;
-  }
-
-  .titulo-texto-encriptado {
+      top: 62%;
       width: 336px;
       height: 58px;
       font-weight: 700;
@@ -96,8 +148,9 @@
       color: #343A40;
   }
 
-
   .texto-encriptado {
+      position: absolute;
+      top: 70%;
       width: 336px;
       height: 48px;
       font-size: 16px;
@@ -106,101 +159,11 @@
       color: #495057;
   }
 
-  .buttons {
-      /* Frame 3 */
-
-      /* Auto layout */
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 24px;
-
+  footer {
       position: absolute;
-      width: 680px;
-      height: 67px;
-      left: 240px;
-      top: 885px;
-  }
-
-  .btn-encriptar {
-      width: 328px;
-      height: 67px;
-      background: #0A3871;
-      border-radius: 24px;
-
-      /* Inside auto layout */
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-  }
-
-  .frame-3 {
-      /* Frame 3 */
-
-      /* Auto layout */
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 24px;
-
-      position: absolute;
-      width: 680px;
-      height: 67px;
-      left: 240px;
-      top: 885px;
-  }
-
-  button {
-      width: 328px;
-      height: 67px;
-      border-radius: 24px;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19px;
-      text-align: center;
-  }
-
-  .btn-1 {
-      background: #0A3871;
-      color: #fff;
-  }
-
-
-  .btn-2 {
-      background: #D8DFE8;
-      border: 1px solid #0A3871;
-      color: #0A3871;
-  }
-
-  .frame-1 {
-      /* Frame 1 */
-
-      /* Auto layout */
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0px;
-      gap: 8px;
-
-      position: absolute;
-      width: 229px;
-      height: 18px;
-      left: 240px;
-      top: 851px;
-  }
-
-  .ico.inf {
-      width: 16px;
-      height: 16px;
-  }
-
-  .inf {
-      width: 205px;
-      height: 18px;
-      font-size: 12px;
-      line-height: 150%;
+      left: 75vw;
+      top: 97vh;
+      font-size: .9rem;
       color: #495057;
-      opacity: 0.8;
+      text-align: right;
   }
